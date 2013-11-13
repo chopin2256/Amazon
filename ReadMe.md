@@ -66,7 +66,7 @@ function amazonLayout($i, I_Amazon $amazon) {
 
 ```
 
-*  Let's say we wanted to print a list of 10 titles, the shell code to do that would like something like:
+*  Let's say we wanted to print a list of 5 titles, the shell code to do that would like something like:
 
 ```php
 
