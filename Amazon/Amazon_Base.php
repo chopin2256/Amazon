@@ -74,14 +74,16 @@ class Amazon_Base {
      * Initialize Amazon and tell it which product to search for
      * @param string $keyword
      */    
-    
     private function _init($kw) {
         $this->_requestDelay(); //Request Delay
         $this->_keyword = $kw;  //Set keyword
         $this->_runAuth();      //Run auth
         $this->_getArrayData(); //Run XML Data Stream
     }
-
+    
+    /**
+     * Authorizes request
+     */
     private function _runAuth() {
         $auth = new Amazon_Auth();
         $params = $auth->parameters($this->_keyword);  //Run parameters and set dynamic keyword value
@@ -90,6 +92,10 @@ class Amazon_Base {
         $this->_authenticatedUrl = $auth->authenticatedUrl($canonicalizedQuery, $signature);
     }
     
+    /**
+     * Main request to grab Amazon data in xml format.  This is where the api gets called.
+     * @return xml array
+     */
     protected function _getArrayData() {
         if (self::$_counter == 0) {  //Only run curl on first iteration, until data has been purged
             $curl = curl_init($this->_authenticatedUrl);  //Initialize the url
