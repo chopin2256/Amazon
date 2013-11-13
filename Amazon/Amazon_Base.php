@@ -65,11 +65,18 @@ class Amazon_Base {
     static protected $_maxResults;
     
     /**
+     * Set Amazon Delay to 1 second
+     * @var bool 
+     */
+    static protected $_requestDelay;
+    
+    /**
      * Initialize Amazon and tell it which product to search for
      * @param string $keyword
      */    
     
     private function _init($kw) {
+        $this->_requestDelay(); //Request Delay
         $this->_keyword = $kw;  //Set keyword
         $this->_runAuth();      //Run auth
         $this->_getArrayData(); //Run XML Data Stream
@@ -82,7 +89,7 @@ class Amazon_Base {
         $signature = $auth->signature($canonicalizedQuery);
         $this->_authenticatedUrl = $auth->authenticatedUrl($canonicalizedQuery, $signature);
     }
-
+    
     protected function _getArrayData() {
         if (self::$_counter == 0) {  //Only run curl on first iteration, until data has been purged
             $curl = curl_init($this->_authenticatedUrl);  //Initialize the url
@@ -92,7 +99,16 @@ class Amazon_Base {
         self::$_counter = 1;
         return self::$_arrayData;
     }
-
+    
+    /**
+     * Delays request by 0 or 1 second
+     */
+    private function _requestDelay() {
+        if (self::$_requestDelay == true) {
+            sleep(1);
+        }
+    }
+    
     /**
      * 
      * @param string $curl The initialized curl url

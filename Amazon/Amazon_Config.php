@@ -29,5 +29,10 @@ class Amazon_Config extends Amazon_Base implements I_Amazon_Config {
         parent::$_maxResults = $value;
         return $this;
     }
+    
+    public function requestDelay($value) {
+        parent::$_requestDelay = $value;
+        return $this;
+    }
 
 }

@@ -30,6 +30,9 @@ $amazon->config()
 	->locale('com')
 	->maxResults($numResults);
 ```
+*  Note: Another config option is requestDelay.  Set this option to true if you want to add a one second delay to your request, which eliminates the api request limit.  By default, this option is set to false (for example, don't bother setting it at all).  You may also explicitly set this value to false.
+ *  Example: `$amazon->config()->requestDelay(true)` or `$amazon->config()->requestDelay(false)` or just don't set it like in the above example.
+ *  See [Documentation] (https://affiliate-program.amazon.com/gp/advertising/api/detail/faq.html) about this.
 *  Search for a keyword: `$amazon->search($kw);`
 *  Attributes can now easily be retrieved, and all attributes have a data type of an array.  For example, if maxResults is set to 10, each attribute will return an array of 10 results:
  *  `$title = $amazon->get()->title();` 10 titles are returned and saved to the $title variable

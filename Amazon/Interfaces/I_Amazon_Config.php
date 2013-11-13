@@ -34,4 +34,14 @@ interface I_Amazon_Config {
      * @param int Set Amazon Max Results (1 through 10)
      */
     public function maxResults($value);
+    
+  /**
+   * Enables or disables the request delay.
+   * If it is enabled (true) every request is delayed one second eliminating the api request limit.
+   * By default the requestdelay is disabled
+   * @param boolean $value true = enabled, false = disabled
+   * @return boolean
+   * @see https://affiliate-program.amazon.com/gp/advertising/api/detail/faq.html
+   */
+    public function requestDelay($value);
 }
