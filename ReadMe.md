@@ -35,7 +35,7 @@ $amazon->config()
  *  `$title = $amazon->get()->title();` 10 titles are returned and saved to the $title variable
  *  `$url = $amazon->get()->url();`  10 urls are returned and saved to the $url variable
 *  With just some basic knowledge of PHP, if you know how to iterate through an array you can get creative from here and output values in whatever html markup you desire!
-*  So, once you get your Amazon attributes (title, url, price, etc), I suggest that set up a for loop like this:
+*  So, once you get your Amazon attributes (title, url, price, etc), I suggest that you set up a `for loop` like this:
 
 ```php
 for ($i = 0; $i < $numResults; $i++) {
