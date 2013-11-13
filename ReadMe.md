@@ -19,7 +19,7 @@ The documentation for this API is not very straightforward, and there aren't too
 
 ####How To Use
 *  In index.php, be sure to require Amazon.php: `require_once('Amazon.php');`
-*  Instantiate your object: `$amzon = new Amazon();`
+*  Instantiate your object: `$amazon = new Amazon();`
 *  Set your Amazon configuration:
 
 ```php
