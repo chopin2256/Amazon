@@ -46,11 +46,11 @@ for ($i = 0; $i < $numResults; $i++) {
     }
 ```
 
-*  Notice the variable $amazon.  $amazon is actually an object, and we can pass this object as a parameter into a new function with data type I_Amazon, like this:
+*  Notice the variable $amazon.  $amazon is actually an object, and we can pass this object as a parameter into a new function with data type Amazon, like this:
 
 ```php
 
-function amazonLayout($i, I_Amazon $amazon) {
+function amazonLayout($i, Amazon $amazon) {
     //Get your amazon attributes here
     $title = $amazon->get()->title();
     $url = $amazon->get()->url();

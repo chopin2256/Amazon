@@ -35,7 +35,7 @@ function runAmazon() {
     echo $result;
 }
 
-function amazonLayout($i, I_Amazon $amazon) {
+function amazonLayout($i, Amazon $amazon) {
     //Get your amazon attributes here
     $image = $amazon->get()->image("LargeImage");
     $priceLowNew = $amazon->get()->price("lowestNew");
