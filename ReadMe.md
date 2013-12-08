@@ -106,4 +106,4 @@ function amazonLayout($i, Amazon $amazon) {
 
 ####Real Example Usage
 *  This script is used to power the amazon results section part of [Game Binder] (http://www.gamebinder.com/)
-*  Link to [Assassin's Creed Amazon Results] (http://www.gamebinder.com/12/assassins-creed/buy/)
+*  Link to [Assassin's Creed Amazon Results] (http://www.gamebinder.com/game/12/assassins-creed/buy/)
