@@ -42,7 +42,7 @@ $amazon->config()
 
 ```php
 for ($i = 0; $i < $numResults; $i++) {
-        $result .= $this->amazonLayout($i, $amazon);
+        $result .= amazonLayout($i, $amazon);
     }
 ```
 
