@@ -90,7 +90,7 @@ function amazonLayout($i, Amazon $amazon) {
 
     //Loop through array in for loop to save your Amazon results
     for ($i = 0; $i < $cnt; $i++) {
-        $result .= $this->amazonLayout($i, $amazon);
+        $result .= amazonLayout($i, $amazon);
     }
 
     //Clear amazon object
